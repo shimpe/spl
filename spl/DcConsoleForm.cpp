@@ -14,7 +14,7 @@
    limitations under the License.
 
 *-------------------------------------------------------------------------*/
-#include "dcconsoleform.h"
+#include "DcConsoleForm.h"
 #include "ui_dcconsoleform.h"
 #include <QScrollBar>
 #include <QObject>
@@ -110,6 +110,7 @@ DcConsoleForm::~DcConsoleForm()
     saveHistory();
     delete ui;
 }
+
 
 int DcConsoleForm::initGuiElements()
 {

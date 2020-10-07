@@ -31,7 +31,11 @@ include("$$top_srcdir/defaults.pri")
 # Options for building RtMidi
 win32 {
     DEFINES +=__WINDOWS_MM__
-}else:macx {
+}
+else:unix {
+    DEFINES += __UNIX_JACK__
+}
+else:macx {
     DEFINES += __MACOSX_CORE__
 }
 

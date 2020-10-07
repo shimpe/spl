@@ -1,4 +1,4 @@
-QT       += core gui network 
+QT       += core gui network testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 DEFINES += BAD_MIDI_WORKAROUND
@@ -44,6 +44,7 @@ SOURCES += main.cpp\
 
 
 HEADERS  += DcPresetLib.h \
+            DcConsoleForm.h \
             RenameDialog.h \
             MoveDialog.h \
             IoProgressDialog.h \
@@ -84,7 +85,7 @@ macx {
 
 # Include DcMidi
 win32:LIBS += -L$$LIB_OUT/DcMidi/$$DESTDIR/ -ldcmidi
-else:unix:LIBS += -L$$LIB_OUT/DcMidi/$$DESTDIR/ -ldcmidi
+else:unix:LIBS += -L$$LIB_OUT/DcMidi/$$DESTDIR/ -ldcmidi -ljack
 
 win32:PRE_TARGETDEPS += $$LIB_OUT/DcMidi/$$DESTDIR/dcmidi.lib
 else:macx:PRE_TARGETDEPS += $$LIB_OUT/DcMidi/$$DESTDIR/libdcmidi.a
